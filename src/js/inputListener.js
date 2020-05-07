@@ -15,6 +15,7 @@ function onInput(event) {
     fetch.query = value;
     fetch.fetchCountries().then(data => {
       if (data.length >= 1 && data.length <= 10) {
+        PNotify.closeAll();
         updateMarkup(data);
       } else {
         data.status === 404
